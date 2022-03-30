@@ -1,0 +1,8 @@
+<%= turbo_frame_tag quote do %>
+    <%= form_with model: quote do |form| %>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        
+        <%= form.submit %>
+    <% end %>
+<% end %>

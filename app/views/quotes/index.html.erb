@@ -1,0 +1,32 @@
+<main>
+
+  <%= turbo_frame_tag "first_turbo_frame" do %>
+    <%= link_to "New quote 1", new_quote_path %>
+
+    <%= link_to "New quote 2", new_quote_path, data: { turbo_frame: "second_turbo_frame" } %>
+    
+    <%= link_to "New quote 3", new_quote_path, data: { turbo_frame: "_top" } %>
+  <% end %>
+
+
+  <%= turbo_frame_tag "second_turbo_frame" do %>
+    <%= render @quotes %>
+  <% end %>
+
+  <%= turbo_frame_tag "second_turbo_frame", src: new_quote_path do %>
+    <h1>Using src attribute</h1>
+  <% end %>
+
+  <%= @quotes.each do |quote| %>
+    <%= turbo_frame_tag quote do %>
+      <div>
+        <%= link_to quote.name, edit_quote_path(quote) %>
+      </div>
+    <% end %>
+  <% end %>
+
+  <%= 50.times do %>
+    <h1>aoksdiuasbiud</h1>
+  <% end %>
+
+</main>
