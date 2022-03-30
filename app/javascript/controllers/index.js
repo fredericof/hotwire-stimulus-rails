@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import SidebarController from "./sidebar_controller.js"
 application.register("sidebar", SidebarController)
+
+import SliderController from "./slider_controller.js"
+application.register("slider", SliderController)

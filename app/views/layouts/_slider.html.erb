@@ -1,0 +1,35 @@
+<div id="container" class="flex flex-col my-24" data-controller="slider">
+    <h1 class="text-3xl text-gray-900 text-center mb-4">Our slider's title</h1>
+    <div id="scrolling-content" class="flex overflow-x-scroll" data-slider-target="scrollContainer">
+        <div class="w-96 h-64 px-4 flex-shrink-0" data-slider-target="image" id="1">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" />
+        </div>
+        <div class="w-96 h-64 px-4 flex-shrink-0" data-slider-target="image" id="2">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" />
+        </div>
+        <div class="w-96 h-64 px-4 flex-shrink-0" data-slider-target="image" id="3">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" />
+        </div>
+        <div class="w-96 h-64 px-4 flex-shrink-0" data-slider-target="image" id="4">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" />
+        </div>
+        <div class="w-96 h-64 px-4 flex-shrink-0" data-slider-target="image" id="5">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" />
+        </div>
+        <div class="w-96 h-64 px-4 flex-shrink-0" data-slider-target="image" id="6">
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXN8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" />
+        </div>
+    </div>
+
+    <div class="flex mx-auto my-8">
+        <ul class="flex justify-center">
+            <!-- Note that we have one <li> for each image in our gallery -->
+            <li class="h-6 w-6 rounded-full mx-2 cursor-pointer bg-gray-500" data-slider-target="indicator" data-image-id="1" data-action="click->slider#scrollTo"></li>
+            <li class="h-6 w-6 rounded-full mx-2 cursor-pointer bg-gray-500" data-slider-target="indicator" data-image-id="2" data-action="click->slider#scrollTo"></li>
+            <li class="h-6 w-6 rounded-full mx-2 cursor-pointer bg-gray-500" data-slider-target="indicator" data-image-id="3" data-action="click->slider#scrollTo"></li>
+            <li class="h-6 w-6 rounded-full mx-2 cursor-pointer bg-gray-500" data-slider-target="indicator" data-image-id="4" data-action="click->slider#scrollTo"></li>
+            <li class="h-6 w-6 rounded-full mx-2 cursor-pointer bg-gray-500" data-slider-target="indicator" data-image-id="5" data-action="click->slider#scrollTo"></li>
+            <li class="h-6 w-6 rounded-full mx-2 cursor-pointer bg-gray-500" data-slider-target="indicator" data-image-id="6" data-action="click->slider#scrollTo"></li>
+        </ul>
+    </div>
+</div>
