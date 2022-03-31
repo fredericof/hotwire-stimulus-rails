@@ -19,11 +19,13 @@ export default class extends Controller {
     entries.forEach(entry => {
       if (entry.intersectionRatio > 0.5) {
         const intersectingIndex = this.imageTargets.indexOf(entry.target)
+        this.indicatorTargets[intersectingIndex].classList.remove("bg-gray-500")
         this.indicatorTargets[intersectingIndex].classList.add("bg-blue-900")
       }
       else { 
         const intersectingIndex = this.imageTargets.indexOf(entry.target)
         this.indicatorTargets[intersectingIndex].classList.remove("bg-blue-900")
+        this.indicatorTargets[intersectingIndex].classList.add("bg-gray-500")
       }
     })
   }
