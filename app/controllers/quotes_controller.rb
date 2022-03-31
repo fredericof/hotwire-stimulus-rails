@@ -10,4 +10,8 @@ class QuotesController < ApplicationController
   def edit
     @quote = Quote.find(params[:id])
   end
+
+  def search_index
+    @quotes = Quote.search(params)
+  end
 end

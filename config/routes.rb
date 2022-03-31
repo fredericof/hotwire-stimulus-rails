@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root "quotes#index"
 
   resources :quotes
+  get '/search_index', to: 'quotes#search_index', as: 'search_index'
 end
