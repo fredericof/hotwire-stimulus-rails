@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   resources :quotes
   get '/search_index', to: 'quotes#search_index', as: 'search_index'
+  get '/slider_index', to: 'quotes#slider_index', as: 'slider_index'
 end

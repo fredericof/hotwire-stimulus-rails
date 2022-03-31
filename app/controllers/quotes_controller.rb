@@ -14,4 +14,7 @@ class QuotesController < ApplicationController
   def search_index
     @quotes = Quote.search(params)
   end
+
+  def slider_index
+  end
 end

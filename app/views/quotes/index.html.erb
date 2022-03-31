@@ -10,8 +10,6 @@
     </div>
   <% end %>
 
-  <%= link_to "Search Index", search_index_path, class: "underline text-blue-500" %>
-
   <%= turbo_frame_tag "second_turbo_frame" do %>
     <%= render @quotes %>
   <% end %>
@@ -28,6 +26,10 @@
     <% end %>
   <% end %>
 
-  <%= render "layouts/slider" %>
+  <%= turbo_frame_tag "slider_index" do %>
+   <div class="mt-6">
+      <h2>Slider goes here when click Slider index link. By turbo_frame_tag</h2>
+   </div>
+  <% end %>
 
 </main>
