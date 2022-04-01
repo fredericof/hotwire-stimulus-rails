@@ -65,9 +65,25 @@
               </li>
 
               <li class="hover:text-gray-200 h-8">
-                <%= link_to(widgets_path, class: "flex items-center h-8 underline") do %>
+                <%= link_to(widgets_path(pagination_type: "manual"), class: "flex items-center h-8 underline") do %>
                   <span data-sidebar-target="link">
-                    Go to Widget Pagination
+                    Manual Pagination
+                  </span>
+                <% end %>
+              </li>
+
+              <li class="hover:text-gray-200 h-8">
+                <%= link_to(widgets_path(pagination_type: "manual_infinit"), class: "flex items-center h-8 underline") do %>
+                  <span data-sidebar-target="link">
+                    Manual Infinit Pagination
+                  </span>
+                <% end %>
+              </li>
+
+              <li class="hover:text-gray-200 h-8">
+                <%= link_to(widgets_path(pagination_type: "auto_infinit"), class: "flex items-center h-8 underline") do %>
+                  <span data-sidebar-target="link">
+                    Auto Infinit Pagination
                   </span>
                 <% end %>
               </li>

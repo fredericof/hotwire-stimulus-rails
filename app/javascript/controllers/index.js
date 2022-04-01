@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AutoclickController from "./autoclick_controller.js"
+application.register("autoclick", AutoclickController)
+
 import SearchController from "./search_controller.js"
 application.register("search", SearchController)
 
@@ -12,3 +15,6 @@ application.register("sidebar", SidebarController)
 
 import SliderController from "./slider_controller.js"
 application.register("slider", SliderController)
+
+import WidgetController from "./widget_controller.js"
+application.register("widget", WidgetController)
