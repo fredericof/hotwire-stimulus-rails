@@ -4,12 +4,6 @@ class WidgetsController < ApplicationController
   # GET /widgets or /widgets.json
   def index
     @pagy, @widgets = pagy(Widget.all, items: 10)
-
-    if params[:pagination_type] == "manual_infinit"
-      render 'manual_infinit_scroll_pagination'
-    elsif params[:pagination_type] == "auto_infinit"
-      render 'auto_infinit_scroll_pagination'
-    end
   end
 
   # GET /widgets/1 or /widgets/1.json

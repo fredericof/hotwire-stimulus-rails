@@ -3,9 +3,10 @@
     <% if pagy.prev %>
       <%= link_to(
         "< Previous page",
-        widgets_path(page: pagy.prev),
+        widgets_path(pagination_type: "manual", page: pagy.prev),
         class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800",
         data: {
+          turbo_frame: "page_handler",
           turbo_action: "advance"
         }
       ) %>
@@ -15,9 +16,10 @@
     <% if pagy.next %>
       <%= link_to(
         "Next page >",
-        widgets_path(page: pagy.next),
+        widgets_path(pagination_type: "manual", page: pagy.next),
         class: "rounded py-3 px-5 bg-gray-600 text-white block hover:bg-gray-800",
         data: {
+          turbo_frame: "page_handler",
           turbo_action: "advance"
         }
       ) %>

@@ -8,8 +8,18 @@
     <%= link_to 'New widget', new_widget_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
-  <%= turbo_frame_tag "widgets", class: "min-w-full", autoscroll: "true" do %>
-    <%= render @widgets %>
+  <div id="widgets" class="min-w-full">
+      <%= render @widgets %>
+  </div>
+
+  <% if params[:pagination_type] == "manual_infinit" %>
+    <%= turbo_frame_tag "infinit_page_handler" %>
+    <%= render "manual_infinit_pager", pagy: @pagy %>
+  <% elsif params[:pagination_type] == "auto_infinit" %>
+    <%= turbo_frame_tag "infinit_page_handler" %>
+    <%= render "auto_infinit_pager", pagy: @pagy %>
+  <% else %>
+    <%= turbo_frame_tag "page_handler", autoscroll: "true" %>
     <%= render "pager", pagy: @pagy %>
   <% end %>
 </div>

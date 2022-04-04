@@ -1,12 +1,43 @@
-<%= turbo_frame_tag "page_handler" do %>
-  <%= turbo_stream_action_tag(
-    "append",
-    target: "widgets",
-    template: %(#{render @widgets}) 
-  ) %>
-  <%= turbo_stream_action_tag(
-    "replace",
-    target: "pager",
-    template: %(#{render "manual_infinit_pager", pagy: @pagy})
-    ) %>
+<% if params[:pagination_type] == "manual" %>
+
+  <%# Manual Page Handler %>
+  <%= turbo_frame_tag "page_handler" do %> 
+    <%= turbo_stream_action_tag(
+      "update",
+      target: "widgets",
+      template: %(#{render @widgets}) 
+      ) %>
+
+    <%= turbo_stream_action_tag(
+      "replace",
+      target: "pager",
+      template: %(#{render "pager", pagy: @pagy})
+      ) %>
+  <% end %>
+
+<% else %>
+
+  <%# Automatic Infinit Handler or Manual Inifit Handler %>
+  <%= turbo_frame_tag "infinit_page_handler" do %>
+    <%= turbo_stream_action_tag(
+      "append",
+      target: "widgets",
+      template: %(#{render @widgets}) 
+      ) %>
+
+    <% if params[:pagination_type] == "manual_infinit" %>
+      <%= turbo_stream_action_tag(
+        "replace",
+        target: "pager",
+        template: %(#{render "manual_infinit_pager", pagy: @pagy})
+        ) %>
+    <% elsif params[:pagination_type] == "auto_infinit" %>
+      <%= turbo_stream_action_tag(
+        "replace",
+        target: "pager",
+        template: %(#{render "auto_infinit_pager", pagy: @pagy})
+        ) %>
+    <% end %>
+  <% end %>
+
 <% end %>
